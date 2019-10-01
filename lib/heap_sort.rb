@@ -2,8 +2,8 @@ require_relative "./min_heap"
 require "pry"
 
 # This method uses a heap to sort an array.
-# Time Complexity:  ?
-# Space Complexity: ?
+# Time Complexity:  O (n log n) where n is the number of items in the list. The two loops are O(n) and adding/removing from a heap is O (log n). Inserting/removing from an array is O(n).
+# Space Complexity: O(n) where n is the number of items in the list because you are creating a new heap that needs to store n number of items.
 def heapsort(list)
   heap = MinHeap.new
   counter = list.length
