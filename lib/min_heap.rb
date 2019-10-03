@@ -82,10 +82,12 @@ class MinHeap
     right_child_i = index * 2 + 2
     return if @store[left_child_i] == nil
 
+    # Find smaller child.
     smaller_child_i = left_child_i
     if @store[right_child_i] != nil
       smaller_child_i = (@store[left_child_i].key <= @store[right_child_i].key) ? left_child_i : right_child_i
     end
+
     if @store[index].key > @store[smaller_child_i].key
       swap(index, smaller_child_i)
       return heap_down(smaller_child_i)
